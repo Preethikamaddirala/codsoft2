@@ -2,10 +2,10 @@ import re
 import tkinter as tk
 import random
 
-class JarvisChatbotGUI:
+class fridayChatbotGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("JARVIS Chatbot")
+        self.root.title("FRIDAY Chatbot")
 
         self.chat_log = tk.Text(root)
         self.chat_log.pack(padx=10, pady=10)
@@ -35,7 +35,7 @@ class JarvisChatbotGUI:
         self.add_initial_greeting()
 
     def add_initial_greeting(self):
-        initial_greeting = f"JARVIS: Hello! How can I assist you, {self.user_name}? Type 'bye' to exit.\n"
+        initial_greeting = f"FRIDAY: Hello! How can I assist you, {self.user_name}? Type 'bye' to exit.\n"
         self.chat_log.insert(tk.END, initial_greeting)
 
     def user_typing(self, event):
@@ -49,11 +49,11 @@ class JarvisChatbotGUI:
         self.chat_log.insert(tk.END, f"You: {user_input}\n")
 
         if user_input.lower() == 'bye':
-            self.chat_log.insert(tk.END, "JARVIS: Goodbye!\n")
+            self.chat_log.insert(tk.END, "FRIDAY: Goodbye!\n")
             self.root.after(1000, self.root.destroy)
         else:
             response = self.chatbot_response(user_input)
-            self.chat_log.insert(tk.END, f"JARVIS: {response}\n")
+            self.chat_log.insert(tk.END, f"FRIDAY: {response}\n")
 
         self.user_input.delete(0, tk.END)
 
@@ -72,5 +72,5 @@ class JarvisChatbotGUI:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = JarvisChatbotGUI(root)
+    app = fridayChatbotGUI(root)
     root.mainloop()
